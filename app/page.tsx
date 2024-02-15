@@ -1,5 +1,7 @@
 "use client";
+import { wleo } from "@/assets";
 import { BackgroundBeams } from "@/components/background-beams";
+import Image from "next/image";
 import { useReportWebVitals } from "next/web-vitals";
 export default function Home() {
   useReportWebVitals((metric) => {
@@ -18,7 +20,7 @@ export default function Home() {
               <span className="font-bold text-neutral-50">Fatsa Yahdi</span>
               <br />
               You can call me{" "}
-              <span className="font-bold text-neutral-50">Fatsa Yahdi</span>
+              <span className="font-bold text-neutral-50">Fatsa</span>
               <br />
               I&apos;m a{" "}
               <span className="font-bold text-neutral-50">
@@ -36,6 +38,11 @@ export default function Home() {
         <p className="mt-4 font-normal text-xl text-neutral-300 max-w-lg text-center mx-auto leading-10">
           mff
         </p>
+        <Image
+          src={wleo}
+          alt="wleowleowleo"
+          className="w-[140px] h-[140px] mt-10"
+        />
       </main>
     </>
   );
