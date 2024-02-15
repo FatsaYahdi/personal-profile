@@ -22,7 +22,7 @@ export default function Home() {
               <br />
               I&apos;m a{" "}
               <span className="font-bold text-neutral-50">
-                Full Stack Developer
+                Front End Developer
               </span>
             </p>
           </div>
