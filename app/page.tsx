@@ -1,21 +1,42 @@
-import { ThemeSwitcher } from "@/components/theme-switcher";
-
+"use client";
+import { BackgroundBeams } from "@/components/background-beams";
+import { useReportWebVitals } from "next/web-vitals";
 export default function Home() {
+  useReportWebVitals((metric) => {
+    console.log(metric);
+  });
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-10">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Hello
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <ThemeSwitcher />
+    <>
+      <main className="hidden lg:block">
+        <div className="h-screen w-full rounded-md relative flex flex-col items-center justify-center antialiased z-10 ">
+          <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
+            <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+              Welcome
+            </h1>
+            <p className="mt-4 font-normal text-lg text-neutral-300 max-w-lg text-center mx-auto leading-10">
+              This is my personal profile website. My name is{" "}
+              <span className="font-bold text-neutral-50">Fatsa Yahdi</span>
+              <br />
+              You can call me{" "}
+              <span className="font-bold text-neutral-50">Fatsa Yahdi</span>
+              <br />
+              I&apos;m a{" "}
+              <span className="font-bold text-neutral-50">
+                Full Stack Developer
+              </span>
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        Welcome
-      </div>
-      <div></div>
-    </main>
+        <BackgroundBeams />
+      </main>
+      <main className="flex lg:hidden h-screen items-center justify-center flex-col">
+        <h1 className="text-4xl  font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+          Dekstop only kak
+        </h1>
+        <p className="mt-4 font-normal text-xl text-neutral-300 max-w-lg text-center mx-auto leading-10">
+          mff
+        </p>
+      </main>
+    </>
   );
 }
