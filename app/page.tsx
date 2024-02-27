@@ -15,13 +15,16 @@ export default function Home() {
             <ThemeSwitcher />
           </div>
           <div className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-0 animate-in fade-in-25 duration-3000">
-            <h1 className="text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-500 to-neutral-900 dark:from-neutral-50 dark:to-neutral-400 bg-opacity-50 ">
-              Hello
+            <h1 className="text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-500 to-neutral-900 dark:from-neutral-50 dark:to-neutral-400 bg-opacity-50 ">
+              Hi
             </h1>
+            <h3 className="text-5xl text-center font-semibold font-outfit mt-6">
+              Welcome to my Website
+            </h3>
           </div>
           <Link
             href={"about"}
-            className="mt-20 bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-md font-semibold leading-6 text-white inline-block animate-in fade-in-0 duration-5000"
+            className="mt-5 bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-md font-semibold leading-6 text-white inline-block animate-in fade-in-0 duration-5000"
           >
             <span className="absolute inset-0 overflow-hidden rounded-full">
               <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -32,7 +35,7 @@ export default function Home() {
             </div>
           </Link>
         </div>
-        <BackgroundBeams className="opacity-100" />
+        {/* <BackgroundBeams className="opacity-100" /> */}
       </main>
       <main className="flex lg:hidden h-screen items-center justify-center flex-col">
         <h1 className="text-4xl  font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
