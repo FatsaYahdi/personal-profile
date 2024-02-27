@@ -7,7 +7,7 @@ import {
   TooltipTrigger,
 } from "@/components/common/tooltip";
 import { ThemeSwitcher } from "@/components/theme-switcher";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { skills } from "./data";
 export default function AboutPage() {
@@ -106,11 +106,15 @@ export default function AboutPage() {
           </section>
         </div>
         <div className="absolute top-10 flex justify-between w-full">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center font-semibold">
             <ArrowLeft className="w-8 h-8 mr-4" />
             Back
           </Link>
           <ThemeSwitcher />
+          <Link href="/projects" className="flex items-center font-semibold">
+            Projects
+            <ArrowRight className="w-8 h-8 ml-4" />
+          </Link>
         </div>
       </div>
     </main>
