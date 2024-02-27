@@ -1,9 +1,9 @@
-import React from "react";
+import { Loader2 } from "lucide-react";
 
 export default function Loading() {
   return (
-    <div className="relative flex h-screen w-full items-center justify-center">
-      loding
+    <div className="flex items-center justify-center w-screen h-screen">
+      <Loader2 className="animate-spin h-12 w-12" />
     </div>
   );
 }
