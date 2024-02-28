@@ -1,7 +1,7 @@
 import { KasirImage } from "@/assets";
 import { PinContainer } from "@/components/3d-pin";
 import { ThemeSwitcher } from "@/components/theme-switcher";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "./data";
@@ -21,19 +21,20 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        <section className="grid grid-cols-2 my-20">
+        <section className="grid grid-cols-2 py-20 gap-20">
           {projects.map((project, index) => (
             <Link href={project.href} key={index + 1} target="_blank">
               <PinContainer title={project.title} href={project.href}>
-                <div className="w-[30rem] h-[20rem] dark:text-[#f3f3f3] text-[#020817]">
+                <div className="w-[30rem] dark:text-[#f3f3f3] text-[#020817]">
                   <h1 className="text-2xl mb-3 font-semibold font-outfit">
                     {project.title}
                   </h1>
-                  <p className="text-sm mb-3">
-                    Website Pengelolaan Keuangan <br />
-                    <span className="text-lg">SMKN 1 KASREMAN</span>
-                  </p>
-                  <Image src={KasirImage} className="w-full" alt="" />
+                  <p className="text-sm mb-3">{project.description}</p>
+                  <Image
+                    src={project.image}
+                    className="w-full h-64 object-cover"
+                    alt=""
+                  />
                 </div>
               </PinContainer>
             </Link>
