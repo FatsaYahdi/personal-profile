@@ -30,11 +30,10 @@ export default function Home() {
 
     if (typeof document !== "undefined") {
       if (opacity >= 0 && opacity <= 1) {
-        const body = document.getElementsByTagName(
-          "BODY"
-        )[0] as HTMLBodyElement;
+        const body = document.getElementsByTagName("body");
+
         if (body) {
-          body.style.opacity = opacity.toString();
+          body[0].style.setProperty("--opacity", opacity.toString());
         }
       }
     }
