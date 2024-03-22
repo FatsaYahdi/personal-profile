@@ -7,9 +7,41 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+  let due_date = new Date("2024-03-23");
+  let deadlines = 60;
+  let current_date = new Date();
+  let utc1 = Date.UTC(
+    due_date.getFullYear(),
+    due_date.getMonth(),
+    due_date.getDate()
+  );
+  let utc2 = Date.UTC(
+    current_date.getFullYear(),
+    current_date.getMonth(),
+    current_date.getDate()
+  );
+  let days = Math.floor((utc2 - utc1) / (1000 * 60 * 60 * 24));
+
+  if (days > 0) {
+    let days_late = deadlines - days;
+    let opacity = (days_late * 100) / deadlines / 100;
+    opacity = opacity < 0 ? 0 : opacity;
+    opacity = opacity > 1 ? 1 : opacity;
+
+    if (typeof document !== "undefined") {
+      if (opacity >= 0 && opacity <= 1) {
+        const body = document.getElementsByTagName(
+          "BODY"
+        )[0] as HTMLBodyElement;
+        if (body) {
+          body.style.opacity = opacity.toString();
+        }
+      }
+    }
+  }
   return (
     <>
-      <main className="hidden lg:block">
+      <main className="block">
         <div className="h-screen w-full rounded-md relative flex flex-col items-center justify-center antialiased z-10">
           <h1 className="text-3xl font-semibold font-outfit">
             Coming Soon... 👋
