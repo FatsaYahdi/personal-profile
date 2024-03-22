@@ -11,7 +11,10 @@ export default function Home() {
     <>
       <main className="hidden lg:block">
         <div className="h-screen w-full rounded-md relative flex flex-col items-center justify-center antialiased z-10">
-          <div className="absolute right-0 top-0 m-10">
+          <h1 className="text-3xl font-semibold font-outfit">
+            Coming Soon... 👋
+          </h1>
+          {/* <div className="absolute right-0 top-0 m-10">
             <ThemeSwitcher />
           </div>
           <div className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-0 animate-in fade-in-25 duration-3000">
@@ -33,10 +36,10 @@ export default function Home() {
               <span>Discover Me</span>
               <ArrowRight height={12} width={12} className="animate-pulse" />
             </div>
-          </Link>
+          </Link> */}
         </div>
-        <BackgroundBeams className="opacity-100" />
-      </main>
+        {/* <BackgroundBeams className="opacity-100" /> */}
+        {/* </main>
       <main className="flex lg:hidden h-screen items-center justify-center flex-col">
         <h1 className="text-4xl  font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
           Dekstop only kak
@@ -48,7 +51,7 @@ export default function Home() {
           src={wleo}
           alt="wleowleowleo"
           className="w-[140px] h-[140px] mt-10"
-        />
+        /> */}
       </main>
     </>
   );
