@@ -33,7 +33,7 @@ export default function Home() {
         const body = document.getElementsByTagName("body");
 
         if (body) {
-          body[0].style.setProperty("--opacity", opacity.toString());
+          body[0].style.opacity = opacity.toString();
         }
       }
     }
