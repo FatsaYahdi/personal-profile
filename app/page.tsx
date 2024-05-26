@@ -1,4 +1,3 @@
-"use client";
 import { wleo } from "@/assets";
 import { BackgroundBeams } from "@/components/background-beams";
 import { ThemeSwitcher } from "@/components/theme-switcher";
@@ -7,37 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
-  let due_date = new Date("2024-03-23");
-  let deadlines = 60;
-  let current_date = new Date();
-  let utc1 = Date.UTC(
-    due_date.getFullYear(),
-    due_date.getMonth(),
-    due_date.getDate()
-  );
-  let utc2 = Date.UTC(
-    current_date.getFullYear(),
-    current_date.getMonth(),
-    current_date.getDate()
-  );
-  let days = Math.floor((utc2 - utc1) / (1000 * 60 * 60 * 24));
-
-  if (days > 0) {
-    let days_late = deadlines - days;
-    let opacity = (days_late * 100) / deadlines / 100;
-    opacity = opacity < 0 ? 0 : opacity;
-    opacity = opacity > 1 ? 1 : opacity;
-
-    if (typeof document !== "undefined") {
-      if (opacity >= 0 && opacity <= 1) {
-        const body = document.getElementsByTagName("body");
-
-        if (body) {
-          body[0].style.opacity = opacity.toString();
-        }
-      }
-    }
-  }
   return (
     <>
       <main className="block">
