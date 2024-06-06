@@ -64,6 +64,9 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        bg: "#dfe5f2",
+        main: "#88aaee",
+        mainAccent: "#4d80e6",
       },
       borderRadius: {
         base: "5px",
@@ -108,7 +111,7 @@ const config = {
         eudoxus: ["Eudoxus Sans", "sans-serif"],
       },
       boxShadow: {
-        base: "4px 4px 0px 0px rgba(0,0,0,1)",
+        base: "4px 4px 0px 0px hsl(var(--foreground))",
       },
       translate: {
         boxShadowX: "4px",

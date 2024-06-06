@@ -2,7 +2,6 @@
 import { Me } from "@/assets";
 import { motion } from "framer-motion";
 import { Eye } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import Scroll from "./common/scroll";
 import { Highlight } from "./common/text-highlight";
@@ -10,7 +9,7 @@ import { Highlight } from "./common/text-highlight";
 function Header() {
   return (
     <section
-      id="header"
+      id="home"
       className="container relative flex items-center justify-start min-h-screen"
     >
       <motion.div
