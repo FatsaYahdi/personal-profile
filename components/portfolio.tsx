@@ -1,6 +1,7 @@
 import { PROJECTS } from "@/data/portolio";
 import Image from "next/image";
 import { Button } from "./common/button";
+import Link from "next/link";
 
 function Portfolio() {
   return (
@@ -27,8 +28,8 @@ function Portfolio() {
                   <p className="mt-2">{project.description}</p>
 
                   <div className="flex justify-end w-full gap-5 mt-8">
-                    <Button variant={"neo"} className="w-full text-lg">
-                      Visit
+                    <Button variant={"neo"} className="w-full text-lg" asChild>
+                      <Link href={project.liveLink}>Visit</Link>
                     </Button>
                   </div>
                 </div>
