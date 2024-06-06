@@ -5,7 +5,7 @@ import React from "react";
 export const Menu = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.nav
-      className="relative flex items-center justify-center w-full gap-10 py-4 border rounded-full md:py-6 md:px-8"
+      className="relative flex items-center justify-center w-full gap-10 py-4 rounded-full md:py-6 md:px-8 bg-background border-2"
       initial={{
         opacity: 0,
         y: -40,

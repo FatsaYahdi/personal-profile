@@ -66,6 +66,7 @@ const config = {
         },
       },
       borderRadius: {
+        base: "5px",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
@@ -105,6 +106,17 @@ const config = {
         fredoka: ["Fredoka", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
         eudoxus: ["Eudoxus Sans", "sans-serif"],
+      },
+      boxShadow: {
+        base: "4px 4px 0px 0px rgba(0,0,0,1)",
+      },
+      translate: {
+        boxShadowX: "4px",
+        boxShadowY: "4px",
+      },
+      fontWeight: {
+        base: "500",
+        heading: "700",
       },
     },
   },

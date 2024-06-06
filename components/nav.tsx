@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
-import { Menu, MenuItem } from "./ui/navbar";
 import Link from "next/link";
-import { ThemeSwitcher } from "./theme/theme-switcher";
+import { Menu, MenuItem } from "./ui/navbar";
 
 type dataType = {
   name: string;
@@ -11,7 +10,7 @@ type dataType = {
 const data: dataType[] = [
   {
     name: "Home",
-    href: "/#",
+    href: "#home",
   },
   {
     name: "About Me",

@@ -6,7 +6,7 @@ function Skills() {
       id="skills"
       className="container relative flex items-center justify-start"
     >
-      Skills
+      {/* TODO: Add skills section */}
     </section>
   );
 }

@@ -1,18 +1,31 @@
 "use client";
-import { motion } from "framer-motion";
-import { Highlight } from "./common/text-highlight";
-import Scroll from "./common/scroll";
 import { Me } from "@/assets";
-import Image from "next/image";
+import { motion } from "framer-motion";
 import { Eye } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import Scroll from "./common/scroll";
+import { Highlight } from "./common/text-highlight";
 
 function Header() {
   return (
     <section
       id="header"
-      className="container relative flex items-center justify-start h-screen"
+      className="container relative flex items-center justify-start min-h-screen"
     >
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.5,
+          ease: [0.4, 0.0, 0.2, 1],
+        }}
+        className="absolute z-[-1] w-full h-[50vh] bg-[radial-gradient(50%_50%_at_50%_50%,_rgba(109,_40,_217,_0.5625)_10%,_rgba(9,_9,_11,_0)_100%)] top-[-300px] left-0"
+      />
       <div className="flex justify-between w-full">
         <div className="px-4">
           <motion.h1
@@ -72,19 +85,14 @@ function Header() {
             </motion.button>
           </Link>
         </div>
-        <motion.div
+        <motion.img
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
+          src={Me.src}
+          alt="Fatsa Yahdi Husna Muhaimin"
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-        >
-          <Image
-            src={Me}
-            alt="Fatsa Yahdi Husna Muhaimin"
-            height={250}
-            width={250}
-            className="object-contain rounded-full size-[250px] p-1 border-4"
-          />
-        </motion.div>
+          className="object-contain rounded-full size-[250px] p-1 border-4"
+        />
       </div>
       <Scroll />
     </section>
