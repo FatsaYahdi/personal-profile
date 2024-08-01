@@ -6,7 +6,7 @@ function WorkExperience() {
   return (
     <section
       id="work-experience"
-      className="container relative flex items-center justify-start my-52"
+      className="container relative flex items-center justify-start my-20"
     >
       <div className="flex items-start justify-center px-4 flex-col">
         <motion.h2
@@ -15,7 +15,7 @@ function WorkExperience() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
           className="scroll-m-20 text-4xl font-semibold tracking-tight first:mt-0"
         >
-          Work Experience
+          Experience
         </motion.h2>
         <div className="relative col-span-9 space-y-6 p-4 mt-6">
           <div className="relative col-span-8 space-y-8 px-4 before:absolute before:-left-3 before:bottom-0 before:top-2 before:w-1 before:bg-primary/35">

@@ -78,7 +78,7 @@ function Header() {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
-              className="mt-24 inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-border bg-[linear-gradient(110deg,hsl(var(--background)),45%,#1e2631,55%,hsl(var(--background)))] bg-[length:200%_100%] px-6 font-medium text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 gap-2 duration-5000 delay-1000"
+              className="mt-24 inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-border bg-[linear-gradient(110deg,hsl(var(--background)),45%,#7936ec,55%,hsl(var(--background)))] bg-[length:200%_100%] px-6 font-medium text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 gap-2 duration-5000 delay-1000"
             >
               <Eye className="size-6" /> View CV
             </motion.button>
