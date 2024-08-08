@@ -6,12 +6,26 @@ import Link from "next/link";
 import Scroll from "./common/scroll";
 import { Highlight } from "./common/text-highlight";
 import RandomGreeting from "./random";
+import { useInView } from "react-intersection-observer";
 
 function Header() {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+  });
+
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
-    <section
+    <motion.section
       id="home"
       className="container relative flex items-center justify-start min-h-screen"
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variants}
+      transition={{ duration: 0.5 }}
     >
       <motion.div
         initial={{
@@ -70,7 +84,7 @@ function Header() {
             <span className="underline underline-offset-4 font-semibold">
               Front-End Engineer.
             </span>{" "}
-            With 1+ year of experience.
+            With 2 years of experience.
           </motion.h3>
           <Link
             href="https://resume.showwcase.com/fatsa-yahdi.pdf?v=1716979431295"
@@ -96,7 +110,7 @@ function Header() {
         />
       </div>
       <Scroll />
-    </section>
+    </motion.section>
   );
 }
 

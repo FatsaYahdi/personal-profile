@@ -1,12 +1,26 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function WorkExperience() {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+  });
+
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
-    <section
+    <motion.section
       id="work-experience"
       className="container relative flex items-center justify-start my-20"
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variants}
+      transition={{ duration: 0.5 }}
     >
       <div className="flex items-start justify-center px-4 flex-col">
         <motion.h2
@@ -73,7 +87,7 @@ function WorkExperience() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

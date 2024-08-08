@@ -2,12 +2,26 @@
 import { be, fe, frameworks, skills, tools } from "@/data/skills";
 import { motion } from "framer-motion"
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 
 function Skills() {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+  });
+
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
-    <section
+    <motion.section
       id="skills"
-      className="container relative flex items-center justify-start"
+      className="container relative flex items-center justify-start my-10"
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variants}
+      transition={{ duration: 0.5 }}
     >
       <div className="flex items-start justify-center px-4 flex-col gap-4 w-full">
         <motion.h2
@@ -86,7 +100,7 @@ function Skills() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

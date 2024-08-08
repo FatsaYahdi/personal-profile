@@ -1,11 +1,25 @@
 "use client";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function About() {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+  });
+
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
-    <section
+    <motion.section
       id="about-me"
       className="container relative flex items-center justify-start mb-40"
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variants}
+      transition={{ duration: 0.5 }}
     >
       <motion.div
         initial={{
@@ -29,14 +43,18 @@ function About() {
         >
           About Me
         </motion.h2>
-        <motion.p className="leading-10 text-2xl mt-6 w-full font-normal tracking-normal">
+        <motion.p className="leading-10 text-2xl mt-6 w-full font-normal tracking-normal"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+        >
           I have experience as a Web Developer. I have an interest in a career
           as a Front-end Engineer (TypeScript and React). <br />
           I&apos;m a fast learner and self-taught. I have learned a lot of new
           technologies in the past few years by myself on the Internet.
         </motion.p>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

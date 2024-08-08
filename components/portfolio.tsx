@@ -7,17 +7,29 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import { CardFooter } from "./ui/card";
 import { CardContent } from "./common/card";
+import { useInView } from "react-intersection-observer";
 
 function Portfolio() {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+  });
+
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
-    <section id="projects" className="container my-10">
+    <motion.section id="projects" className="container my-10"
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variants}
+      transition={{ duration: 0.5 }}
+    >
       <div className="flex items-start justify-center px-4 flex-col">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+        <h2
           className="scroll-m-20 text-4xl font-semibold tracking-tight first:mt-0"
-        >Projects</motion.h2>
+        >Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto px-8 mt-8 w-full">
           {PROJECTS.map((item) => (
             <div className="bg-background rounded-lg overflow-hidden shadow-lg transition-all hover:shadow-xl" key={item.description}>
@@ -52,7 +64,7 @@ function Portfolio() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
