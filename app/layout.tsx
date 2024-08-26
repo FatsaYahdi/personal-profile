@@ -17,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="google-site-verification" content="N6MosYoFfx8FsW_H6GDh3yqZXrJe6Yec1zJe0ZccXy4" />
         <link rel="preconnect" href="https://stijndv.com" />
         <link
           rel="stylesheet"
